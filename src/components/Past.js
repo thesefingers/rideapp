@@ -1,7 +1,9 @@
+import CardStack from "./CardStack";
+
 const PastRides = () =>{
     return (
 
-        <h3> hello there!</h3>
+        <CardStack />
     )
 }
 
