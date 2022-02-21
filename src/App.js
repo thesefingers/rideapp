@@ -1,23 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Head from './components/Head';
+import Subhead from './components/Subhead';
+import Home from './components/Home'
+import UpcomingRides from './components/Upcoming';
+import { Switch, Route } from 'react-router-dom';
+import PastRides from './components/Past';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='sub-body'>
+
+      <Head />
+      <Subhead />
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/Upcoming" exact>
+          <UpcomingRides />
+        </Route>
+        <Route path="/Past" exact>
+          <PastRides />
+        </Route>
+      </Switch>
+
     </div>
   );
 }
